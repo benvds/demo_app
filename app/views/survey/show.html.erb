@@ -1,0 +1,23 @@
+<%= form_for @response, url: survey_submit_url do |f| %>
+
+    <% if @response.errors.any? %>
+        <ul class="form-errors">
+            <% @response.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %><br>
+    </p>
+    <p>
+        <%= f.label :email %><br>
+        <%= f.email_field :email %><br>
+    </p>
+
+    <p>
+    <button type="submit">send</button>
+    </p>
+<% end %>
